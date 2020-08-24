@@ -2,19 +2,167 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
     <title>Product Details</title>
-    <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!--Import google icons font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1" style="font-weight: bold;" > Product Details </span>
-    </nav>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Web 1920 – 7;
+		--web-view-id: Web_1920__7;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Web_1920__7;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Web_1920__7 {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Web 1920 – 7;
+		--web-view-id: Web_1920__7;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	#Headline {
+		position: absolute;
+		width: 1942px;
+		height: 183px;
+		left: -6px;
+		top: -15px;
+		overflow: visible;
+	}
+	#Headline_h {
+		fill: rgba(255,53,5,1);
+	}
+	.Headline_h {
+		position: absolute;
+		overflow: visible;
+		width: 1942px;
+		height: 183px;
+		left: 0px;
+		top: 0px;
+	}
+	#cesta {
+		fill: rgba(255,255,255,1);
+	}
+	.cesta {
+		overflow: visible;
+		position: absolute;
+		width: 66.069px;
+		height: 65.005px;
+		left: 1832px;
+		top: 72px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#favoritos {
+		fill: rgba(255,255,255,1);
+	}
+	.favoritos {
+		overflow: visible;
+		position: absolute;
+		width: 56px;
+		height: 51.5px;
+		left: 1669px;
+		top: 85px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#pesquisa {
+		position: absolute;
+		width: 920px;
+		height: 114px;
+		left: 612px;
+		top: 46.954px;
+		overflow: visible;
+	}
+	#Barra_Pesquisa {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Barra_Pesquisa {
+		overflow: visible;
+		position: absolute;
+		width: 920px;
+		height: 114px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Search {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		left: 841px;
+		top: 36.954px;
+		overflow: visible;
+	}
+	#Path_99 {
+		fill: rgba(255,53,27,1);
+	}
+	.Path_99 {
+		overflow: visible;
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Logo {
+		position: absolute;
+		width: 308px;
+		height: 101px;
+		left: 236px;
+		top: 21px;
+		overflow: visible;
+	}
+	#Club {
+		left: 112px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 85px;
+		height: 51px;
+		text-align: left;
+		font-family: Keypass;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(255,255,255,1);
+	}
+	#Camada_1 {
+		position: absolute;
+		width: 308px;
+		height: 60px;
+		left: 0px;
+		top: 41px;
+		overflow: visible;
+	}
+</style>
+<header style=" background-color:red; height: 100px; width: 100%; margin-bottom: 20px;">
+    <img th:src="@{teste.png}" style="margin-left: 30px; margin-top: -10px">
+    <input type="text" style="width:500px; margin-left: 400px; margin-top: 40px">
+    <a href="/newproduct" style="margin-left:40px" class="btn btn-primary" role="button">Cadastrar novo produto</a>
+    <a href="/home" class="btn btn-primary" role="button">Sair</a>
+    <a href="/signup"  class="btn btn-primary" role="button">Cadastrar interesses</a>
+    <a href="/newproduct" class="btn btn-primary" role="button">Cadastrar novo produto</a>
 </header>
 <main>
-    <div class="container" style="width:60%; padding-bottom:30px;" >
+    <div class="container" style="width:60%; padding-top:100px;" >
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" style="background-color: white; padding-left: 0px;" >
                 <a href="/products">Products</a>
@@ -22,6 +170,7 @@
         </nav>
         <article>
             <h1 class="card-title" style="font-weight:bold; margin-bottom: 20px;"><span th:text="${product.productName}"></span></h1>
+            <h1 class="card-title" style="font-weight:bold; margin-bottom: 20px;"> R$ <span th:text="${product.value}"></span></h1>
             <p class="card-subtitle mb-2 text-muted">
                 <i class="material-icons">person_outline</i>
                 <span th:text="${product.seller}"></span>
@@ -33,10 +182,10 @@
                 <p class="card-text" style="margin-top: 40px;"> <span th:utext="${product.productName}"></span></p>
             </section>
             <section>
-                <p class="card-text" style="margin-top: 40px;"> <span th:utext="${product.Value}"></span></p>
+                <p class="card-text" style="margin-top: 40px;"> <span th:utext="${product.productDescription}"></span></p>
             </section>
             <section>
-                <p class="card-text" style="margin-top: 40px;"> <span th:utext="${product.productDescription}"></span></p>
+                <p class="card-text" style="margin-top: 40px;" > <img th:src="${product.urlPhoto}"></img></p>
             </section>
         </article>
     </div>

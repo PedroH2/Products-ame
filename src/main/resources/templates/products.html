@@ -3,16 +3,168 @@
 <head>
     <title>Products</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Web 1920 – 7;
+		--web-view-id: Web_1920__7;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Web_1920__7;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Web_1920__7 {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Web 1920 – 7;
+		--web-view-id: Web_1920__7;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	#Headline {
+		position: absolute;
+		width: 1942px;
+		height: 183px;
+		left: -6px;
+		top: -15px;
+		overflow: visible;
+	}
+	#Headline_h {
+		fill: rgba(255,53,5,1);
+	}
+	.Headline_h {
+		position: absolute;
+		overflow: visible;
+		width: 1942px;
+		height: 183px;
+		left: 0px;
+		top: 0px;
+	}
+	#cesta {
+		fill: rgba(255,255,255,1);
+	}
+	.cesta {
+		overflow: visible;
+		position: absolute;
+		width: 66.069px;
+		height: 65.005px;
+		left: 1832px;
+		top: 72px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#favoritos {
+		fill: rgba(255,255,255,1);
+	}
+	.favoritos {
+		overflow: visible;
+		position: absolute;
+		width: 56px;
+		height: 51.5px;
+		left: 1669px;
+		top: 85px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#pesquisa {
+		position: absolute;
+		width: 920px;
+		height: 114px;
+		left: 612px;
+		top: 46.954px;
+		overflow: visible;
+	}
+	#Barra_Pesquisa {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Barra_Pesquisa {
+		overflow: visible;
+		position: absolute;
+		width: 920px;
+		height: 114px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Search {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		left: 841px;
+		top: 36.954px;
+		overflow: visible;
+	}
+	#Path_99 {
+		fill: rgba(255,53,27,1);
+	}
+	.Path_99 {
+		overflow: visible;
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Logo {
+		position: absolute;
+		width: 308px;
+		height: 101px;
+		left: 236px;
+		top: 21px;
+		overflow: visible;
+	}
+	#Club {
+		left: 112px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 85px;
+		height: 51px;
+		text-align: left;
+		font-family: Keypass;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(255,255,255,1);
+	}
+	#Camada_1 {
+		position: absolute;
+		width: 308px;
+		height: 60px;
+		left: 0px;
+		top: 41px;
+		overflow: visible;
+	}
+</style>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1" style="font-weight: bold;" > Products available </span>
-    </nav>
+<header style=" background-color:red; height: 100px; width: 100%; margin-bottom: 20px;">
+    <a href="/products"><img th:src="@{teste.png}" style="margin-left: 30px; margin-top: -10px"> </a>
+    <input type="text" style="width:500px; margin-left: 400px; margin-top: 40px">
+    <a href="/newproduct" style="margin-left:40px" class="btn btn-primary" role="button">Cadastrar novo produto</a>
+    <a href="/home" class="btn btn-primary" role="button">Sair</a>
+    <a href="/signup"  class="btn btn-primary" role="button">Cadastrar interesses</a>
 </header>
 <section>
-    <div class="container" style="width:60%; padding-bottom:30px;" >
+    <div class="container" style="width:60%; padding-top:100px;" >
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" style="background-color: white; padding-left: 0px;" >
                 <li class="breadcrumb-item active" aria-current="page">Products</li>
@@ -22,17 +174,24 @@
             <div class="card-body">
                 <p class ="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;" >
                     <span th:text="${product.seller}"></span>
-                    <span th:text="${product.Postdate}"></span>
+                    <span th:text="${product.Postdate}"></span><BR>
+                    R$: <span th:text="${product.value}"></span>
                 </p>
-                <a th:href="${(#mvc.url('CC#getProductDescription').arg(0,product.id)).build()}">
+                <a th:href="@{'/products/' + ${product.id}}">
                     <h4 class="card-title" style="font-weight: bold; color: black; padding-top:5px" >
                             <span th:text="${product.productName}">
                             </span>
                     </h4>
                 </a>
-                <p class="card-text">
-                    <span th:utext="${#strings.abbreviate(product.productName,400)}"></span>
+                <p class ="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;" >
                 </p>
+
+                <p class="card-text">
+                    <span th:utext="${#strings.abbreviate(product.productDescription,400)}"></span>
+                </p>
+                <section>
+                    <p class="card-text" > <img style="margin-top: 40px; width: 100px; height: 140px;" th:src="${product.urlPhoto}"></img></p>
+                </section>
             </div>
         </div>
     </div>

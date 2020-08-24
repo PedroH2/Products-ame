@@ -30,12 +30,23 @@ public class Product {
     @NotNull
     private String value;
 
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
     @NotBlank
     @Lob
     private String productName;
 
     @NotBlank
     private String tags; //categories
+
+    @NotBlank
+    private String urlPhoto;
 
     public String getValue() {
         return value;
